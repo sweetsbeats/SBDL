@@ -1,0 +1,25 @@
+
+#ingore buffers and emacs stuff
+
+*.cpp~
+*.h~
+
+*.#.cpp
+*.#.h
+
+*.#.md
+
+*.bat~
+
+*.txt~
+
+*.exe
+
+*~
+
+*.gitignore~
+
+*makefile~
+
+#ignore build dir
+#build/
