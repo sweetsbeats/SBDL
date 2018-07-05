@@ -1,0 +1,58 @@
+
+/------SWEETS BEATS DATA LANGUAGE PRIMER-------/
+/--------------- WIP -------------------------/
+
+Purpose: Provide me a clean, human readable data format to serialize and store game data
+
+
+structure_name: {
+
+ test_string:string = "Hello, Sailor!";
+ test_int:int = 2;
+ test_float:float = 2.1;
+
+ # 1 == false : 0 == true
+ # 
+ test_bool:int = 0;
+
+
+ # data specific array types are: int-arr, float-arr, string-arr (and bools are implicit conversions from int)
+ test_arr:int-arr = {
+   1,1,1,1
+ };
+
+#multi-array
+ map:arr = {
+   {1,2,3,4},
+   {4,5,6,7},
+   {8,9,0,0};
+ };
+ 
+}
+
+/-------- Example in C++ ----------/
+
+
+//returns 2
+int test_int = data.get<int>( "test_int" );
+
+//returns 2.1
+float test_float = data.get<float>( "test_float" );
+
+//returns "Hello, Sailor!" as std::string
+std::string test_string = data.get<std::string>("test_string");
+
+//returns true
+
+bool test_bool = data.get<bool>( "test_bool" );
+
+std::array<int, data.getSizeOf( "test_arr" )> my arr
+
+/*   Setting data in SBDL   */
+
+// sets "my_new_int" to 42
+data.set( "my_new_int", 42 );
+
+//prints 42
+std::cout << data.get( "my_new_int" ) << std::endl;
+
